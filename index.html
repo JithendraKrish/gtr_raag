@@ -1,23 +1,27 @@
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
-
-        <title>PyScript Hello World</title>
-
-
-        <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
-        <link rel="stylesheet" href="./assets/css/examples.css" />
-        <script defer src="https://pyscript.net/latest/pyscript.js"></script>
-	
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read Text File</title>
 </head>
 <body>
-Hello world! <br />
-This is the current date and time, as computed by Python:
-	<py-script>
-print('Hi enter a number')
-a = int(input(' qwe'))
-print(a)
-	</py-script>
+
+    <div id="fileContent"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('example.txt')
+                .then(response => response.text())
+                .then(data => {
+                    // Do something with the contents of the file
+                    document.getElementById('fileContent').innerText = data;
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        });
+    </script>
+
 </body>
 </html>
