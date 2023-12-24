@@ -1,0 +1,30 @@
+<!-- read_file.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read File Page</title>
+</head>
+<body>
+
+    <h1>Read File Page</h1>
+
+    <!-- Display the content of example.txt -->
+    <p id="fileContent"></p>
+
+    <!-- Include a script to read and display the content of example.txt -->
+    <script>
+        // Read and display the content of example.txt
+        fetch('example.txt')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('fileContent').innerText = data;
+            })
+            .catch(error => console.error('Error reading file:', error));
+    </script>
+
+</body>
+</html>
