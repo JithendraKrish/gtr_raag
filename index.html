@@ -1,27 +1,22 @@
+<!-- index.html -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Read Text File</title>
+    <title>Index Page</title>
 </head>
 <body>
 
-    <div id="fileContent"></div>
+    <h1>Index Page</h1>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            fetch('example.txt')
-                .then(response => response.text())
-                .then(data => {
-                    // Do something with the contents of the file
-                    document.getElementById('fileContent').innerText = data;
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                });
-        });
-    </script>
+    <!-- Link to open another HTML file -->
+    <a href="read_file.html" target="_blank">Open Read File Page</a>
+
+    <!-- Include your script.py execution -->
+    <script src="script.py"></script>
 
 </body>
 </html>
